@@ -28,7 +28,7 @@ class Statistics(object) :
             print(i)
 
         print("-------------------")
-        print("Nombre moyen de publications par année et par type ")
+        print("Nombre de publications par année et par type ")
         avg_publication_year = collection.aggregate([{'$group': {"_id": {"type" : "$type" , "year" : "$year"}, "nb" : {"$sum" : 1 } }}, {"$sort" : { "_id" : 1 }}])  
         for i in avg_publication_year :
             print(i)
