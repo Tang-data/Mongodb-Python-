@@ -213,7 +213,7 @@ class Oeuvre(object):
                              "year" : year,
                              "_id" : _id}) 
         print('-------------------------')
-        pprint.pprint("Voici le document nouvellement créé : ")
+        print("Voici le document nouvellement créé : ")
         pprint.pprint(collection.find_one({"$and" : [{"type" : type},
                                          {"title" : title},
                                          {"year" : year}

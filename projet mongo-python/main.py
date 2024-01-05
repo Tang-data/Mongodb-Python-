@@ -1,4 +1,4 @@
-from oeuvre import Oeuvre
+import recherche
 from stat_db import Statistics
 from colorama import Fore, Back, Style
 from colorama import init
@@ -12,16 +12,16 @@ def rechercher_livre():
     print("4 pour rechercher par nom d'auteur")
     print("5 pour revenir au menu précédent")
     print('-------------------------')
-    choix = input(("Entrez votre choix : "))
+    choix = input(("Entrez votre choix : ")) 
     match choix :
         case "1" : 
-            Oeuvre.recherche_livre_type(input("Saisissez le type d'oeuvre à rechercher : "))
+            recherche.recherche_livre(input("Saisissez le type d'oeuvre à rechercher : ") , choix)
         case "2" : 
-            Oeuvre.recherche_livre_titre(input("Saississez le titre de l'oeuvre à rechercher : "))
+            recherche.recherche_livre(input("Saississez le titre de l'oeuvre à rechercher : "), choix)
         case "3" : 
-            Oeuvre.recherche_livre_annee()
+            recherche.recherche_livre(input("Saisissez l'année de la publication que vous recherchez : "), choix)
         case "4" : 
-            Oeuvre.recherche_livre_nom_auteur(input("Saississez le nom de l'auteur : "))
+            recherche.recherche_livre(input("Saississez le nom de l'auteur : "), choix)
         case "5" :
             pass
         case _ : 
